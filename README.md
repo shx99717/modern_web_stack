@@ -48,6 +48,17 @@ webpack runs on Node.js, a JavaScript runtime that can be used in computers and 
 
 When Node.js was released a new era started, and it came with new challenges. Now that JavaScript is not running in a browser, how are Node applications supposed to load new chunks of code? There are no html files and script tags that can be added to it. (that is how the web pages load different chunks of Javascript, but at the backend javascript application this need to be solved differently)
 
+`CommonJS from NodeJS` came out and introduced `require()`, which allows you to load and use a module in the current file. This solved scope issues out of the box by importing each module as it was needed.
+
+
+With the introduction of `require() and NodeJS` the backend Javascript world now is happy and modular, but the frontend Javascript world is still not happy because of these problems:
+* No Live bindings
+* Circular references
+* Synchronous module resolution
+* Slow loading
+* Browsers did not support modules
+
+The introduction of `Browserify`, `RequireJS` and `SystemJS` was there to solve the above pain points in the browser, where allow us to write `CommonJS` modules that run in the browser.
 
 ### 1. Around year 2000
 ### 1. Around year 2000
