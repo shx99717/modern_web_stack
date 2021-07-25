@@ -2,17 +2,17 @@
 
 ## History and context
 Reference: https://www.youtube.com/watch?v=QliwSwWHJoQ&t=29s
-### 1. <mark>Around year 2000</mark> <>
+### 1. **Around year 2000**
 Simple HTML content + simple javascript
 
-### 2. <mark>Solve ES5 ES6 ESX problem --- Babel</mark>
+### 2. **Solve ES5 ES6 ESX problem --- Babel**
 Due to the evolution of Javascript world and the old browser support, the compatiblity of Javascript on browsers became a problem
 
 e.g. We are coding in ES6 code, but the browser only support ES5 code, how can we solve this kind of problem
 
 `Babel` is there to help, a Javascript to Javascript compiler
 
-### 3. <mark>Solve problems that introduced by complex Javascript dependencies, and Content Rich website heavily relying on the Javascript --- Webpack</mark>
+### 3. **Solve problems that introduced by complex Javascript dependencies, and Content Rich website heavily relying on the Javascript --- Webpack**
 When a project contains a lot of javascript file, leads to problem of
 * scope
 * size
@@ -68,7 +68,7 @@ Also some good points about using `webpack`.
 * It's a tool that lets you bundle your JavaScript applications (supporting both ESM and CommonJS), and it can be extended to support many different assets such as images, fonts and stylesheets.
 * webpack cares about performance and load times; it's always improving or adding new features, such as async chunk loading and prefetching, to deliver the best possible experience for your project and your users.
 
-### 4. <mark>The bundle tooling Webpack generate the bundled javascript file will have javascript compatiblity issue from point 2, as webpack does not talk to babel - Aim is to make sure webpack can communicate with all these different tools and bundle everything together correctly --- Webpack loader</mark>
+### **4. The bundle tooling Webpack generate the bundled javascript file will have javascript compatiblity issue from point 2, as webpack does not talk to babel - Aim is to make sure webpack can communicate with all these different tools and bundle everything together correctly --- Webpack loader**
 e.g. we could introduce different loaders to webpack
 * Babel loader
 * typescript loader
@@ -76,9 +76,9 @@ e.g. we could introduce different loaders to webpack
 * y loader
 * z loader
 
-### 5. <mark>Web application is becoming richer and richer in its content and form, cool frameworks like React, VueJS and Angular introduced</mark>
+### **5. Web application is becoming richer and richer in its content and form, cool frameworks like React, VueJS and Angular introduced**
 
-### 6. <mark>People relized that we need type in javascript, this helps for compliation time check rather than run time check --- Typescript</mark>
+### **6. People relized that we need type in javascript, this helps for compliation time check rather than run time check --- Typescript**
 So we will convert the typescript to javascript by `Typescript loader`, and then convert javascript to another set of javascript by `Babel loader`
 
-### 7. <mark>Modern frontend development wants everything in one file, e.g. import scss into the javascript</mark>
+### **7. Modern frontend development wants everything in one file, e.g. import scss into the javascript**
