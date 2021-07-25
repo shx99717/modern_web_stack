@@ -60,6 +60,14 @@ With the introduction of `require() and NodeJS` the backend Javascript world now
 
 The introduction of `Browserify`, `RequireJS` and `SystemJS` was there to solve the above pain points in the browser, where allow us to write `CommonJS` modules that run in the browser.
 
+**(History) Offically introduction of ECMAScript Modules**
+The good news for web projects(frontend project) is that modules are becoming an official feature in the ECMAScript standard. However, browser support is incomplete, therefore By using `webpack` is currently recommended approach to modulised the javascript at both frontend and backend javascript development
+
+Also some good points about using `webpack`.
+* Old school Task Runners and even `Google Closure Compiler` requires you to manually declare all dependencies upfront. While bundlers like `webpack` **automatically** builds and infer your dependency graph based on what is imported and exported. 
+* It's a tool that lets you bundle your JavaScript applications (supporting both ESM and CommonJS), and it can be extended to support many different assets such as images, fonts and stylesheets.
+* webpack cares about performance and load times; it's always improving or adding new features, such as async chunk loading and prefetching, to deliver the best possible experience for your project and your users.
+
 ### 1. Around year 2000
 ### 1. Around year 2000
 ### 1. Around year 2000
