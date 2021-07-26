@@ -79,6 +79,23 @@ e.g. we could introduce different loaders to webpack
 ### **5. Web application is becoming richer and richer in its content and form, cool frameworks like React, VueJS and Angular introduced**
 
 ### **6. People relized that we need type in javascript, this helps for compliation time check rather than run time check --- Typescript**
-So we will convert the typescript to javascript by `Typescript loader`, and then convert javascript to another set of javascript by `Babel loader`
+So we could convert the typescript to javascript by `Typescript loader`, and then convert javascript to another set of javascript by `Babel loader`, but ...
+- Typescript has already supported compilation to older version of javascript, e.g. _"ES3" (default), "ES5", "ES6"/"ES2015", "ES2016", "ES2017" or "ESNext"_ where ESNext will take the latest version
+- If you need some of the custom transformations that only `Babel` provides, the best build pipeline is still to pass the `TypeScript` files to the `TypeScript` compiler and then to `Babel` afterwards, otherwise seems to me `Typescript` is enough for most of the case.
+
+> TypeScript is a typed superset of JavaScript that compiles to plain JavaScript - typescriptlang.org.
+
+JavaScript is a programming language that is developed by ECMA's Technical Committee 39, which is a group of people composed of many different stakeholders. TC39 is a committee hosted by ECMA: an internal standards organization. JavaScript has many different implementations by many different vendors (e.g. Google, Microsoft, Oracle, etc.). The goal of JavaScript is to be the lingua franca of the web.
+
+TypeScript is a superset of the JavaScript language that has a single open-source compiler and is developed mainly by a single vendor: Microsoft. The goal of TypeScript is to help catch mistakes early through a type system and to make JavaScript development more efficient.
+
+Essentially TypeScript achieves its goals in three ways:
+
+- **Support for modern JavaScript features** - The JavaScript language (not the runtime) is standardized through the ECMAScript standards. Not all browsers and JavaScript runtimes support all features of all ECMAScript standards (see this overview). TypeScript allows for the use of many of the latest ECMAScript features and translates them to older ECMAScript targets of your choosing (see the list of compile targets under the --target compiler option). This means that you can safely use new features, like modules, lambda functions, classes, the spread operator and destructuring, while remaining backwards compatible with older browsers and JavaScript runtimes.
+
+- **Advanced type system** - The type support is not part of the ECMAScript standard and will likely never be due to the interpreted nature instead of compiled nature of JavaScript. The type system of TypeScript is incredibly rich and includes: interfaces, enums, hybrid types, generics, union/intersection types, access modifiers and much more. The official website of TypeScript gives an overview of these features. Typescript's type system is on-par with most other typed languages and in some cases arguably more powerful.
+
+- **Developer tooling support** - TypeScript's compiler can run as a background process to support both incremental compilation and IDE integration such that you can more easily navigate, identify problems, inspect possibilities and refactor your codebase.
 
 ### **7. Modern frontend development wants everything in one file, e.g. import scss into the javascript**
+
