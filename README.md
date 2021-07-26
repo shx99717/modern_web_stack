@@ -2,6 +2,8 @@
 
 ## History and context
 Reference: https://www.youtube.com/watch?v=QliwSwWHJoQ&t=29s
+Reference: https://www.youtube.com/watch?v=Elpu7CIuqjY&t=520s
+
 ### 1. **Around year 2000**
 Simple HTML content + simple javascript
 
