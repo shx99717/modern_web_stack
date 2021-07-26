@@ -83,7 +83,7 @@ e.g. we could introduce different loaders to webpack
 ### **6. People relized that we need type in javascript, this helps for compliation time check rather than run time check --- Typescript**
 So we could convert the typescript to javascript by `Typescript loader`, and then convert javascript to another set of javascript by `Babel loader`, but ...
 - Typescript has already supported compilation to older version of javascript, e.g. _"ES3" (default), "ES5", "ES6"/"ES2015", "ES2016", "ES2017" or "ESNext"_ where ESNext will take the latest version
-- If you need some of the custom transformations that only `Babel` provides, the best build pipeline is still to pass the `TypeScript` files to the `TypeScript` compiler and then to `Babel` afterwards, otherwise seems to me `Typescript` is enough for most of the case.
+- If you need some of the custom transformations that only `Babel` provides, the best build pipeline is still to pass the `TypeScript` files to the `TypeScript` compiler and then to `Babel` afterwards, otherwise seems to me `Typescript` is enough for most of the case.(But still a lot of projects use Babel for javascript transpiling, so still a good choice)
 
 > TypeScript is a typed superset of JavaScript that compiles to plain JavaScript - typescriptlang.org.
 
