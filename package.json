@@ -4,7 +4,7 @@
   "description": "Reference: https://www.youtube.com/watch?v=QliwSwWHJoQ&t=29s\r Reference: https://www.youtube.com/watch?v=Elpu7CIuqjY&t=520s",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --config webpack/webpack.config.js --env env=dev --open",
+    "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,11 +29,13 @@
     "@babel/preset-env": "^7.14.8",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "react-refresh": "^0.10.0",
     "sass": "^1.36.0",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
