@@ -1,4 +1,5 @@
 import './styles.css'
+import './styles.scss'
 import IMAGE from './react_logo.png'
 import BANANA from './bananas.svg'
 

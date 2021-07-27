@@ -1,0 +1,7 @@
+body {
+    background-color: green;
+
+    img {
+        &:hover {border: 2px solid tomato;}
+    }
+}
