@@ -1,7 +1,9 @@
 body {
-    background-color: green;
+  background-color: green;
 
-    img {
-        &:hover {border: 2px solid tomato;}
+  img {
+    &:hover {
+      border: 2px solid tomato;
     }
+  }
 }

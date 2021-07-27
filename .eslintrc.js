@@ -17,7 +17,10 @@ module.exports = {
       'plugin:import/warnings',
       'plugin:import/typescript',
       'plugin:jsx-a11y/recommended',
-      'plugin:eslint-comments/recommended', // make sure ESLint VS Code extension need to be installed
+      'plugin:eslint-comments/recommended', // make sure ESLint VS Code extension installed
+      'prettier',
+      'prettier/@typescript-eslint', // make sure prettier VS Code extension installed
+      'plugin:prettier/recommended',
     ],
     rules: {
       'no-unused-vars': 'off',
