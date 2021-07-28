@@ -5,11 +5,12 @@ import BANANA from './bananas.svg'
 import { Counter } from './ClickCounter'
 
 export const App = () => {
+  const name = 'World'
   return (
     <>
       <h1>
         (6)React TypeScript WebPack Starter Template --- {process.env.NODE_ENV}{' '}
-        | {process.env.name}
+        | {process.env.name} | Hi, {name}
       </h1>
       <img src={IMAGE} alt="React Logo" width="300" />
       <img src={BANANA} alt="BANANA" width="300" />
