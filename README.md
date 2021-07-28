@@ -101,3 +101,146 @@ Essentially TypeScript achieves its goals in three ways:
 
 ### **7. Modern frontend development wants everything in one file, e.g. import scss into the javascript**
 
+---
+
+
+# More on Webpack
+Unlike most bundlers out there, the motivation behind Webpack is to gather all your dependencies (not just code, but other assets as well) and generate a dependency graph.
+
+At first, it might look strange to see a `.js` file require a stylesheet, or a stylesheet retrieving an image modified as it was a module, but these allow Webpack to understand what is included in your bundle and helps you transform and optimize them.
+
+**The goal of Webpack is to handle all our dependencies. includes web assets like images and stylesheets etc**
+```javascript
+// index.js file
+import helpers from '/helpers/main.js';
+
+// Hey Webpack! I will need these styles:
+import 'main.css';
+```
+
+## Entry
+There are many ways to specify our “entry point”, which will be the root of our dependencies graph.
+```javascript
+var baseConfig = {
+  entry: './src/index.js'
+};
+```
+
+## Output
+The output in Webpack is an object holding the path where our bundles and assets will go, as well as the name the entries will adopt.
+
+
+```javascript
+var path = require('path');
+
+var baseConfig = {
+  entry: {
+    main: './src/index.js'
+  },
+  output: {
+    filename: 'main.js',
+    path: path.resolve('./build')
+  }
+};
+
+// export configuration
+module.exports = baseConfig;
+```
+
+## Loader
+See the code
+```javascript
+// index.js file
+import helpers from '/helpers/main.js';
+
+// Hey Webpack! I will need these styles:
+import 'main.css';
+```
+
+import a stylesheet in a javascript file, and by default bundler can be used only to handle the javascript file, but with the help of `loader`, it can handle other assets
+
+Loaders provide an easy way to intercept our dependencies and preprocess them before they get bundled.
+
+```javascript
+var baseConfig = {
+  // ...
+  module: {
+    rules: [
+      {
+        test: /* RegEx */,
+        use: [
+          {
+            loader: /* loader name */,
+            query: /* optional config object */
+          }
+        ] 
+      }
+    ]
+  }
+};
+```
+Examples:
+* handle stylesheet - `css-loader`
+* handle less(preprocessor) - `less-loader`
+* transpiling - `babel-loader`
+* images - `url-loader`, `svg-inline-loader` etc
+
+
+## Plugin
+Webpack contains default behaviors to bundle most type of resources. When loaders are not enough, we can use plugins to modify or add capabilities to Webpack.
+
+### Extracting assets
+For example, Webpack by default includes our styles inside our bundle, but we can alter this by introducing a plugin.
+```javascript
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+var lessRules = {
+  use: [
+    { loader: 'css-loader' },
+    { loader: 'less-loader' }
+  ]
+};
+
+var baseConfig = {
+  // ...
+  module: {
+    rules: [
+      // ...
+      { test: /\.less$/, use: ExtractTextPlugin.extract(lessRules) }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin('main.css')
+  ]
+};
+```
+
+### Generate an `index.html` file
+When building single-page applications we usually need one .html file to serve it.
+The HtmlWebpackPlugin automatically creates an `index.html` file
+
+```javascript
+var HTMLWebpackPlugin = require('html-webpack-plugin');
+
+var baseConfig = {
+  // ...
+  plugins: [
+    new HTMLWebpackPlugin()
+  ]
+};
+```
+
+
+
+## Mode
+Providing the mode configuration option tells webpack to use its built-in optimizations accordingly.
+```javascript
+// Provide the mode option in the config
+module.exports = {
+  mode: 'development',
+};
+
+// Pass as CLI mode = [development|production|none]
+webpack --mode=development
+
+```
